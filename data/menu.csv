@@ -1,0 +1,108 @@
+itemID,itemName,itemPrice,itemType
+1,Plain Dosa,5,1
+2,Paneer Dosa,6,1
+3,Paneer Chilly Dosa,7,1
+4,Sweet Corn Chilly Dosa,9,1
+5,Green Peas Chilly Dosa,10,1
+6,Mushroom Dosa,12,1
+7,Baby Corn Dosa,13,1
+8,Cauliflower Dosa,14,1
+9,Palak Chilly Dosa,15,1
+10,Sehezwan Noodles Dosa,16,1
+11,Mysore Masala Dosa,15,1
+12,Mysore Cheese Dosa,15,1
+13,Pizza Dosa,17,1
+14,Allo Dosa,17,1
+15,Rava Dosa,14,1
+16,Family Dosa,20,1
+17,Onion Dosa,6,1
+18,Spring Roll Dosa,8,1
+19,Butter Naan,12,2
+20,Garlic Naan,13,2
+21,Onion Naan,14,2
+22,Aloo Naan,16,2
+23,Lacha Naan,17,2
+24,Cheese Naan,18,2
+25,Roti,13,2
+26,Kerala Porotta,15,2
+27,Bun Porotta,14,2
+28,Kizi Porotta,18,2
+29,Kothu Porotta,19,2
+30,Poori,11,2
+31,Cocktail Samosa,10,3
+32,Samosa chaat,10,3
+33,Batata Vada,10,3
+34,Bang Bang Cauliflower,10,3
+35,Tomato Soup,10,3
+36,Spinach Soup,10,3
+37,Cutlite,10,3
+38,Parupu vada,10,3
+39,Egg Spring Rolls,5,4
+40,Chicken Spring Rolls,8,4
+41,Chicken 65,10,4
+42,Chilli Chicken,12,4
+43,Chicken Drum Sticks,13,4
+44,Chicken Manchurian,16,4
+45,Pepper Chicken,14,4
+46,Chicken Lollipop,15,4
+47,Ginger Chicken,14,4
+48,Dream Nut Chicken,15,4
+49,Apolo Fish,16,4
+50,Ginger Fish,18,4
+51,Chicken Sangai,18,4
+52,Paneer Tikka,20,5
+53,Kadai Paneer,20,5
+54,Butter Paneer Masala,21,5
+55,Mutter Paneer,24,5
+56,Sev Tamatar,25,5
+57,Mix Veg,22,5
+58,Malai Kofta,24,5
+59,Aloo Gofta,22,5
+60,Dal Tadka,22,5
+61,Kaju Paneer,22,5
+62,Butter Chicken,30,6
+63,Kadai Chicken,30,6
+64,Chicken Tika Masala,35,6
+65,Bundel Khandi Chicken,33,6
+66,Chicken Home Style,30,6
+67,Egg Curry,32,6
+68,Chicken Curry,34,6
+69,Mutton Curry,33,6
+70,Fish Curry,34,6
+71,Fish Fry,33,6
+72,Mutton Keema,35,6
+73,Andhra Fish Curry,33,6
+74,Kerala Fish Curry,36,6
+75,Chocolate Cupcake,10,7
+76,Homemade Banoofee Pie,10,7
+77,Coppa Catalana,10,7
+78,Homemade Tiramisu,12,7
+79,Chocolotate Cake,10,7
+80,Lattice Applie Pie,12,7
+81,Gelati Misti,11,7
+82,Dirty Martini,20,8
+83,Manhattan,21,8
+84,B52,22,8
+85,Old Fashioned,23,8
+86,Harvey Wallbanger,24,8
+87,Black Forest Caake,25,8
+88,Blue Lagoon,26,8
+89,Sex On The Beach,27,8
+90,Mai Tai,28,8
+91,Mango Fusion,20,9
+92,Passion Tropic,21,9
+93,Margarita,22,9
+94,Orginal Mojito,23,9
+95,Watermelon Mojito,24,9
+96,Melon Mojito,25,9
+97,Mai Tai,26,9
+98,Arun Chocolate Icecream,90,10
+99,Arun Strawberry Icecream,91,10
+100,Arun Berry Icecream,92,10
+101,Arun Melon Icecream,93,10
+102,Arun Vanila Icecream,94,10
+103,Arun Cherry Icecream,95,10
+104,Arun Creamy Icecream,96,10
+105,Arun Matcha,97,10
+106,Arun Lemon Icecream,98,10
+107,Arun Toffee,99,10
