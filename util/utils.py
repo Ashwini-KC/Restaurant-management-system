@@ -14,7 +14,7 @@ def generate_select_delete(id, table, op):
     match table:
         case "customer":
             table = "CUSTOMER"
-            ID = "CustID"
+            ID = "custID"
         case "employee":
             table = "employee"
             ID = "EmpID"
