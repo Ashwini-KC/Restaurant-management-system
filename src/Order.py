@@ -1,14 +1,14 @@
 class Order:
-    def __init__(self,orderId,itemId,itemName,quantity,custId,serverId):
+    def __init__(self,orderID,itemID,quantity,tableID,serverID):
         self.orderId=orderId
-        self.itemId=itemId
-        self.itemName=itemName
+        self.itemID=itemID
         self.quantity=quantity
-        self.custId=custId
-        self.serverId=serverId
+        self.tableID=tableID
+        self.serverID=serverID
 
     def order_items():
         '''
         allows the customer to select things from menu and lets them order
         '''
+
         pass
