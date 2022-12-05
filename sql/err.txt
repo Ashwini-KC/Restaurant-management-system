@@ -1,0 +1,3 @@
+Executed SQL Statement : GRANT  ALTER, ALTER ROUTINE, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, CREATE VIEW, DELETE, DROP, EVENT, EXECUTE, INDEX, INSERT, LOCK TABLES, REFERENCES, SELECT, SHOW VIEW, TRIGGER, UPDATE ON  `performance_schema`.* TO 'root'@'%' WITH GRANT OPTION 
+Error Number : 1044 
+Error Message: Access denied for user 'root'@'%' to database 'performance_schema' 
