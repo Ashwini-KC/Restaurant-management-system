@@ -10,9 +10,9 @@ from src import Employee, Customer, Chef
 # employee_1.delete_employee()
 
 
-from src import Item, Menu
+from src import Item, Menu, Order, Bill
 
-
+'''
 item_1 = Item(1, "Chapati", 2, "Bread")
 item_2 = Item(2, "Chicken", 3, "Main-course")
 item_3 = Item(3, "Lamb", 3, "Main-course")
@@ -33,6 +33,27 @@ menu.update_item(item_3, {"itemID": 69, "itemName": "Garlic Naan"})
 
 print(menu.get_menu())
 
-
+'''
 customer1 =Customer('2222PP','JJ BUXTOM','Eat-In')
+customer2 =Customer('223LPX','Harry Maguire','Takeaway')
 customer1.add_customer()
+customer2.add_customer()
+
+
+employee1 = Employee('WS12','HARRY STYLES','WAITER')
+employee1.add_employee()
+'''
+order1 = Order()
+order1.add_items("100",employee1,customer1,8)
+order1.place_order_items()
+'''
+order2 = Order()
+
+order2.add_items("17",employee1,customer2,2)
+order2.place_order_items()
+
+
+bill1 = Bill(customer2.custId)
+print(bill1.calculate_Bill())
+bill1.generate_Bill()
+
