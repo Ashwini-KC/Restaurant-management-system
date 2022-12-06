@@ -34,3 +34,5 @@ menu.update_item(item_3, {"itemID": 69, "itemName": "Garlic Naan"})
 print(menu.get_menu())
 
 
+customer1 =Customer('2222PP','JJ BUXTOM','Eat-In')
+customer1.add_customer()
