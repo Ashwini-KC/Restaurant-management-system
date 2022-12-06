@@ -1,5 +1,5 @@
 from src import Employee, Customer, Chef
-
+import crypt
 # employee_1 = Employee(21, "Akhil", 2)
 # employee_1.add_employee()
 
@@ -34,3 +34,6 @@ menu.update_item(item_3, {"itemID": 69, "itemName": "Garlic Naan"})
 print(menu.get_menu())
 
 
+customer1 =Customer('2222PP','JJ BUXTOM','Eat-In')
+
+customer1.delete_customer()
