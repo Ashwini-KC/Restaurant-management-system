@@ -38,7 +38,7 @@ class Customer:
         try:
             conn = create_db_connection()
             with conn.cursor() as cursor:
-                cursor.execute("s")
+                cursor.execute(f"insert into customer values(\"{self.custId}\",\"{self.custName}\",\"{self.custType}\")")
                 conn.commit()
                 conn.close()
             return self.customer_details()
