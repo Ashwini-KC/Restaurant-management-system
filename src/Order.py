@@ -1,5 +1,5 @@
 from random_id import *
-import string
+
 from util import create_db_connection,generate_insert_update_query,generate_select_delete
 class Order:
     ordered_items_list = []
@@ -16,7 +16,7 @@ class Order:
             conn =create_db_connection()
             with conn.cursor() as cursor:
                 for i in self.ordered_items_list:
-                    cursor.execute(f"insert into orders values(\"{i['orderID']}\",\"{i['itemID']}\",\"{i['custID']}\",\"{i['empID']}\",{i['quantity']});")
+                    cursor.execute(f"insert into orders values(\"{i['orderID']}\",\"{i['itemID']}\",\"{i['empID']}\",{i['quantity']},\"{i['custID']}\");")
                 
                 conn.commit()
                 conn.close()
@@ -31,9 +31,9 @@ class Order:
         item_details={
             'orderID':orderID,
             'itemID':item,
-            'custID':customer.custId,
             'empID':emp.EmpID,
-            'quantity':quantity
+            'quantity':quantity,
+            'custID':customer.custId,
         }
 
         self.ordered_items_list.append(item_details)
