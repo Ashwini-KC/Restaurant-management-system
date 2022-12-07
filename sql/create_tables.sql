@@ -61,10 +61,6 @@ add constraint fk_itemID
 foreign key(itemID) references menu(itemID);
 
 alter table orders drop column waiterID;
-alter table orders add column empID varchar(255), add constraint fk_constraint2 foreign key(empID) references employee(empID);
-
-
-alter table orders drop column waiterID;
 
 alter table orders add column empID varchar(255), add constraint fk_constraint2 foreign key(empID) references employee(empID);
 
@@ -80,3 +76,4 @@ alter table bill add column total int;
 alter table bill drop constraint bill_ibfk_1;
 alter table bill  drop column tableID;
 
+ALTER TABLE ORDERS ADD COLUMN CustID varchar(255), add constraint fk_custIDS foreign key(custID) references customer(custID);
