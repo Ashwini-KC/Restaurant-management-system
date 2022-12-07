@@ -10,7 +10,8 @@ from src import Employee, Customer, Chef
 # employee_1.delete_employee()
 
 
-from src import Item, Menu, Order
+from src import Item, Menu, Order, Bill
+
 
 '''
 item_1 = Item(1, "Chapati", 2, "Bread")
