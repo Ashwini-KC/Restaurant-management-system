@@ -16,7 +16,9 @@
 
 1) In properties.py file change the configurations.
 
-1) Run queries in in the mysql shell from files in the sql folder.
+Run the following commands after opening mysql in command line from the project folder 
+source sql/create_tables.sql
+source sql/insert-menu.sql
 
 1) Implement the code in main.py and run
 

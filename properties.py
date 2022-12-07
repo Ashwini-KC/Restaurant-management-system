@@ -4,4 +4,4 @@ DB_HOST = "localhost"
 
 # Will be moved to .env file
 DB_USERNAME = "root"
-DB_PASSWORD = "root"
+DB_PASSWORD = "shibasis@99PS"
