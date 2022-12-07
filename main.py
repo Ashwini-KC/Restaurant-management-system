@@ -12,6 +12,7 @@ from src import Employee, Customer, Chef
 
 from src import Item, Menu, Order, Bill
 
+
 '''
 item_1 = Item(1, "Chapati", 2, "Bread")
 item_2 = Item(2, "Chicken", 3, "Main-course")
@@ -51,9 +52,3 @@ order2 = Order()
 
 order2.add_items("17",employee1,customer2,2)
 order2.place_order_items()
-
-
-bill1 = Bill(customer2.custId)
-print(bill1.calculate_Bill())
-bill1.generate_Bill()
-
