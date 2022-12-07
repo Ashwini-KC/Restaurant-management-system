@@ -1,19 +1,65 @@
+from util import create_db_connection
+from random_id import *
 class Table:
-    def __init__(self,tableNumber,occupiedStatus,serverId,customerId):
-        self.tableNumber= tableNumber
-        self.occupiedStatus= occupiedStatus
-        self.serverId=serverId
+    tableList =[]
+    def __init__(self,EmpId,customerId):
+        self.EmpID = EmpId
         self.customerId= customerId
 
-    def table_details():
 
-        '''
-        part of god's plan
-        will be updated after first sprint
-        who is "GOD"?'''
-        pass
+    def set_EmpID(self,id):
+        self.EmpID = id
 
-    def availability_status():
+    def get_EmpID(self):
+        return self.EmpID
+
+    def get_customerId(self):
+        return self.customerId
+
+    def set_customerId(self,id):
+        self.customerId = id
+
+
+    def table_detail_list(self):
+        return self.tableList 
+
+
+    def table_details(self):
         '''
-        return the list of available tables out of all tables'''
-        pass
+        0 SIGNIFIES THE TABLES WHICH ARE NOT BOOKED
+        '''
+        
+        try:
+            conn = create_db_connection()
+            with conn.cursor() as cursor:
+                cursor.execute("select tableID,EmpID from tables where available =0; ")
+
+                for i in cursor:
+                    self.tableList.append(i)
+                
+                conn.commit()
+                conn.close()
+            return self.tableList
+        except Exception as e:
+            return e
+                    
+
+
+
+        
+
+    def change_availability_status(self,tableID,customerId):
+
+        try:
+            conn = create_db_connection()
+            with conn.cursor() as cursor:
+                cursor.execute(f"update tables set available = 1, custID =\"{customerId}\" where tableID = \"{tableID}\";")
+                conn.commit()
+                conn.close()
+            self.table_details()
+            return self.tableList
+        except Exception as e:
+            return e
+
+
+
