@@ -75,9 +75,5 @@ alter table bill drop column orderID;
 alter table bill add column total int;
 alter table bill drop constraint bill_ibfk_1;
 alter table bill  drop column tableID;
-alter table tables drop column quantity;
-alter table tables drop column seats;
-alter table tables add column customer varchar(255),
-add constraint fk_customer 
-foreign key(custID) references customer(custID);
 
+ALTER TABLE ORDERS ADD COLUMN CustID varchar(255), add constraint fk_custIDS foreign key(custID) references customer(custID);
