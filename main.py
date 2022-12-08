@@ -1,13 +1,8 @@
 from src import Employee
 from prettytable import PrettyTable
 
-main_menu = PrettyTable(["Options", "Operations"])
-main_menu.add_row(["1", "Employees"])
-main_menu.add_row(["2", "Menu"])
-main_menu.add_row(["3", "Bill"])
-main_menu.add_row(["4", "Table"])
-main_menu.add_row(["5", "Order"])
-main_menu.add_row(["6", "Exit"])
+employee_1 = Employee(21, "Akhil", 2)
+print(employee_1.add_employee())
 
 employee_menu = PrettyTable(["Options", "Operations"])
 employee_menu.add_row(["1", "Add Employee"])
