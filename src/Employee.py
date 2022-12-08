@@ -87,7 +87,7 @@ class Employee:
                 cursor.execute(query)
                 connection.commit()
                 connection.close()
-            return self.employee_details()
+            return self.employee_details(oldID)
         except Exception as e:
             return e 
 
