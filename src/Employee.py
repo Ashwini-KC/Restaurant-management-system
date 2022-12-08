@@ -17,7 +17,6 @@ class Employee:
     #     self.EmpName = EmpName
     #     self.empType = empType
     def employee_details(self, empID):
->>>>>>> features
 
         '''
         Returns a dictionary of the employee object.
