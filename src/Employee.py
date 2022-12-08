@@ -8,54 +8,52 @@ this is meaningless
 better code segregation required
 --> Done
 '''
+from util import create_db_connection, generate_insert_update_query, generate_select_delete
 
 from util import create_db_connection
 class Employee:
-    def __init__(self, EmpID, EmpName, EmpType=None): 
-        self.EmpID = EmpID
-        self.EmpName = EmpName
-        self.EmpType = EmpType
-
-    def get_EmpID(self):
-        return self.EmpID
-
-    def set_EmpID(self,id):
-        self.EmpID = id
-    
-    def get_EmpName(self):
-        return self.EmpName
-    
-    
-    def set_EmpName(self,name):
-        self.EmpName = name
-    
-    def get_EmpType(self):
-        return self.EmpType
-        
-    def set_EmpType(self,type):
-        self.EmpType = type
-    
-
-    def employee_details(self):
+    # def __init__(self, EmpID, EmpName, empType=None): 
+    #     self.EmpID = EmpID
+    #     self.EmpName = EmpName
+    #     self.empType = empType
+    def employee_details(self, empID):
 
         '''
         Returns a dictionary of the employee object.
         '''
-        return self.__dict__
-    
-    def add_employee(self):
-        '''Adds news employee detial to the employee table.
-        '''
+        query = generate_select_delete(empID, "employee", "select")
+
         try:
             connection = create_db_connection()
             with connection.cursor() as cursor:
-                cursor.execute(f"INSERT INTO employee VALUES ({self.EmpID}, \"{self.EmpName}\", {self.EmpType})")
+                cursor.execute(query)
+                results = cursor.fetchone()
                 connection.commit()
                 connection.close()
-            return self.employee_details()
+            return results
         except Exception as e:
             return e 
-    def delete_employee(self):
+    
+    def add_employee(self, empID, empName, empType):
+        '''Adds news employee detial to the employee table.
+        '''
+        employee = {
+            'empID': empID,
+            'empName': empName,
+            'empType':empType 
+        }
+        query = f"INSERT INTO employee VALUES ({employee['empID']}, \"{employee['empName']}\", {employee['empType']})"
+
+        try:
+            connection = create_db_connection()
+            with connection.cursor() as cursor:
+                cursor.execute(query)
+                connection.commit()
+                connection.close()
+            return employee
+        except Exception as e:
+            return e 
+    def delete_employee(self, empID):
         '''Deletes an employee from the "employee" table.
 
         Returns: a dictionary of the deleted employee.
@@ -64,14 +62,14 @@ class Employee:
             connection = create_db_connection()
 
             with connection.cursor() as cursor:
-                cursor.execute(f"DELETE FROM employee WHERE EmpID = {self.EmpID}")
+                cursor.execute(f"DELETE FROM employee WHERE empID = {empID}")
                 connection.commit()
                 connection.close()
-            return self.employee_details()
+            return True
         except Exception as e:
             return e 
 
-    def update_employee(self, attributes):
+    def update_employee(self, empID, attributes):
         """Updates the database with new values for a particular employee.
 
         Args:
@@ -80,7 +78,7 @@ class Employee:
 
         Returns: A dictionary of the updated employee object.
         """
-        oldID = self.EmpID
+        oldID = empID
         query = generate_insert_update_query(attributes, "employee", "update", oldID)
         try:
             connection = create_db_connection()
@@ -91,13 +89,24 @@ class Employee:
             return self.employee_details()
         except Exception as e:
             return e 
-        
+
+    def get_all_employees(self):
+        try:
+            connection = create_db_connection()
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM EMPLOYEE")
+                results = cursor.fetchall()
+                connection.commit()
+                connection.close()
+            return results
+        except Exception as e:
+            return e 
 
 class Waiter(Employee):
-    def __init__(self, EmpID, EmpName):
-        super().__init__(EmpID, EmpName)
+    def __init__(self, empID, empName):
+        super().__init__(empID, empName)
         
 
 class Chef(Employee):
-    def __init__(self, EmpID, EmpName):
-        super().__init__(EmpID, EmpName)
+    def __init__(self, empID, empName):
+        super().__init__(empID, empName)
