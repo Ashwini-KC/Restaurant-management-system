@@ -10,6 +10,11 @@ class Bill:
         self.CustID = CustID
         
         
+    def get_custID(self):
+        return self.CustID
+
+    def set_custID(self,CustID):
+        self.CustID = CustID
 
 
 

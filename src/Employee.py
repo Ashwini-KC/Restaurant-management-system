@@ -1,7 +1,6 @@
 '''
 what is the meaning of life?
---> Nothing really... You're life is a JOKE. 
-True
+--> Nothing really... You're lif is a JOKE. 
 this is meaningless
 --> This is meaningless indeed. But to get this useless degree we need "THIS"
 '''
@@ -9,17 +8,38 @@ this is meaningless
 better code segregation required
 --> Done
 '''
-from util import create_db_connection, generate_insert_update_query
 
+from util import create_db_connection
 class Employee:
-    def __init__(self, EmpID, EmpName, EmpType): 
+    def __init__(self, EmpID, EmpName, EmpType=None): 
         self.EmpID = EmpID
         self.EmpName = EmpName
         self.EmpType = EmpType
 
+    def get_EmpID(self):
+        return self.EmpID
+
+    def set_EmpID(self,id):
+        self.EmpID = id
+    
+    def get_EmpName(self):
+        return self.EmpName
+    
+    
+    def set_EmpName(self,name):
+        self.EmpName = name
+    
+    def get_EmpType(self):
+        return self.EmpType
+        
+    def set_EmpType(self,type):
+        self.EmpType = type
+    
+
     def employee_details(self):
 
-        '''Returns a dictionary of the employee object.
+        '''
+        Returns a dictionary of the employee object.
         '''
         return self.__dict__
     
@@ -29,7 +49,7 @@ class Employee:
         try:
             connection = create_db_connection()
             with connection.cursor() as cursor:
-                cursor.execute(f"INSERT INTO employee VALUES (\"{self.EmpID}\", \"{self.EmpName}\", \"{self.EmpType}\")")
+                cursor.execute(f"INSERT INTO employee VALUES ({self.EmpID}, \"{self.EmpName}\", {self.EmpType})")
                 connection.commit()
                 connection.close()
             return self.employee_details()
