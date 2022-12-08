@@ -16,13 +16,13 @@ def generate_select_delete(id, table, op):
             table = "CUSTOMER"
             ID = "custID"
         case "employee":
-            table = "employee"
-            ID = "EmpID"
+            table = "EMPLOYEE"
+            ID = "empID"
         case "menu":
-            table = "menu"
+            table = "MENU"
             ID = "itemID"
         case "order":
-            table = "order"
+            table = "ORDER"
             ID = "orderID"
     
     match op:
@@ -56,13 +56,13 @@ def generate_insert_update_query(obj, table, op, old_id=None):
             table = "CUSTOMER"
             ID = "CustID"
         case "employee":
-            table = "employee"
-            ID = "EmpID"
+            table = "EMPLOYEE"
+            ID = "empID"
         case "menu":
-            table = "menu"
+            table = "MENU"
             ID = "itemID"
         case "order":
-            table = "order"
+            table = "ORDER"
             ID = "orderID"
     match op:
         case "insert":

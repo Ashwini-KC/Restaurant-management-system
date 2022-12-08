@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pymysql = "*"
+prettytable = "*"
+random-id = "*"
 
 [dev-packages]
 

@@ -53,6 +53,7 @@ source sql/insert-menu.sql
     +-----------+--------------+------+-----+---------+-------+
    ```
 
+pip install random_id
 ### Todo
 
 - [ ] Create tables for each class.
