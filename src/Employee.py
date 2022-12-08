@@ -58,6 +58,7 @@ class Employee:
 
         Returns: a dictionary of the deleted employee.
         '''
+        emp = self.employee_details(empID)
         try:
             connection = create_db_connection()
 
@@ -65,7 +66,7 @@ class Employee:
                 cursor.execute(f"DELETE FROM employee WHERE empID = {empID}")
                 connection.commit()
                 connection.close()
-            return True
+            return emp
         except Exception as e:
             return e 
 
@@ -86,7 +87,7 @@ class Employee:
                 cursor.execute(query)
                 connection.commit()
                 connection.close()
-            return self.employee_details()
+            return self.employee_details(oldID)
         except Exception as e:
             return e 
 

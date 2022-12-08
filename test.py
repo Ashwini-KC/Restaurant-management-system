@@ -1,17 +1,20 @@
-"""Ignore file. Used to populate the menu table because somehow importing the csv wasn't working as expected.
-"""
-import os
+from test import employee_test
 
-from util import create_db_connection
-with open("data/menu.csv", 'r') as f:
-    data = f.readlines()
-    rows = []
-    with open("sql/insert-menu.sql", 'w') as fp:
-
-        for line in data:
-            r = ""
-            for _ in [row for row in line.strip().split(",")]:
-                r += f"\"{_}\", "
-            entry = f"INSERT INTO MENU VALUES({r.strip()[: -1]});"
-            fp.write(entry + os.linesep)
-        
+print("*****ADD EMPLOYE*****")
+employee_test.test_add_employee()
+print()
+print()
+print("*****EMPLOYEE DETEAILS*****")
+employee_test.test_employee_details()
+print()
+print()
+print("*****UPDATE EMPLOYEE*****")
+employee_test.test_update_employee()
+print()
+print()
+print("*****DELETE EMPLOYEE*****")
+employee_test.test_delete_employee()
+print()
+print()
+print("*****ALL EMPLOYEES*****")
+employee_test.test_get_all_employees()
