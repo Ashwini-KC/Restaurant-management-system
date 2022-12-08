@@ -1,4 +1,4 @@
-from src import Employee
+from src import Employee, Item, Menu
 from prettytable import PrettyTable
 
 main_menu = PrettyTable(["Options", "Operations"])
@@ -23,6 +23,21 @@ emp_table.add_row(["2", "empType"])
 emp_table.add_row(["3", "Update"])
 emp_table.add_row(["4", "Previous menu"])
 
+
+menu_table_menu = PrettyTable(["Options", "Operations"])
+menu_table_menu.add_row(["1", "Add an Item to the Menu"])
+menu_table_menu.add_row(["2", "Delete an Item to the Menu"])
+menu_table_menu.add_row(["3", "Update an Item to the Menu"])
+menu_table_menu.add_row(["4", "List Menu"])
+menu_table_menu.add_row(["5", "Previous menu"])
+
+menu_item_update_table = PrettyTable(["Options", "Attributes"])
+menu_item_update_table.add_row(["1", "itemName"])
+menu_item_update_table.add_row(["2", "itemPrice"])
+menu_item_update_table.add_row(["3", "itemType"])
+menu_item_update_table.add_row(["4", "Update"])
+menu_item_update_table.add_row(["5", "Previous menu"])
+
 def main():
     flag = True
 
@@ -46,7 +61,7 @@ def main():
                         case "2":
                             emp = Employee()
                             empID = input("Enter the Employee ID:\t")
-                            emp.delete_employee(empID)
+                            print(emp.delete_employee(empID))
                         case "3":
                             empID = input("Enter the Employee ID:\t")
                             emp = Employee()
@@ -83,9 +98,69 @@ def main():
                             print(all_EMPLOYEE)
                         case "6":
                             employee_flag = False
+            case "2":
+                menu_loop_flag = True
+                while menu_loop_flag:
+                    print(menu_table_menu)
+                    menu_option = input("Choose an option.\n")
+                    match menu_option:
+                        case "1":
+                            menu = Menu()
+                            itemID = input("Item ID:\t")
+                            itemName = input("Item Name:\t")
+                            itemPrice = input("Item Price:\t")
+                            itemType = input("Item Type:\t")
+
+                            item = Item(itemID, itemName, itemPrice, itemType)
+
+                            print(menu.add_item(item), " Added to the menu.\n")
+                        case "2":
+                            menu = Menu()
+                            itemID = input("Item ID:\t")
+                            print(menu.delete_item(itemID), "Deleted.")
+                        case "3":
+                            itemID = input("Enter the Item ID:\t")
+                            menu_update_flag = True
+                            menu = Menu()
+                            new_item = menu.find_by_id(itemID)
+                            while menu_loop_flag:
+                                print(menu_item_update_table)
+                                menu_update_options = input("Enter option.\n")
+                                match menu_update_options:
+                                    case "1":
+                                        new_item["itemName"] = input("Item Name:\t")
+                                        print(new_item)
+                                    case "2":
+                                        new_item["itemPrice"] = input("Item Price:\t")
+                                        print(new_item)
+                                    case "3":
+                                        new_item["itemType"] = input("Item Type:\t")
+                                        print(new_item)
+                                    case "4":
+                                        menu_loop_flag = False
+                                        menu.update_item(itemID, new_item)
+                                    case "5":
+                                        menu_update_flag = False
+
+                        case "4":
+                            menu = Menu()
+                            MENU_ITEMS = PrettyTable(["itemID", "itemName", "itemPrice", "itemType"])
+                            emp = Employee()
+                            for item in menu.get_all_items():
+                                MENU_ITEMS.add_row([item['itemID'], item['itemName'], item['itemPrice'], item['itemType']])
+                            print(MENU_ITEMS)
+
+                        case "5":
+                            menu_loop_flag = False
+            case "3":
+                print("Bill")
+            case "4":
+                print("Table")
+            case "5":
+                print("Order")
+            
             case "6":
                 flag = False
     
 if __name__ == "__main__":
     main()
-    
