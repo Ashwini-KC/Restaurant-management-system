@@ -38,6 +38,10 @@ menu_item_update_table.add_row(["3", "itemType"])
 menu_item_update_table.add_row(["4", "Update"])
 menu_item_update_table.add_row(["5", "Previous menu"])
 
+table_menu= PrettyTable(["Options","operatons"])
+table_menu.add_row(['1',"add_table"])
+table_menu.add_row(["2", "Previouse menu"])
+
 def main():
     flag = True
 
@@ -87,9 +91,8 @@ def main():
                             empID = input("Enter the Employee ID:\t")
                             emp = Employee()
                             emp = emp.employee_details(empID)
-                            emp_table = PrettyTable([key for key, value in emp.items()])
-                            emp_table.add_row([value for key, value in emp.items()])
-                            print(emp_table)
+                            emp_table_details = PrettyTable([key for key, value in emp.items()])
+                            emp_table_details.add_row([value for key, value in emp.items()])
                         case "5":
                             all_EMPLOYEE = PrettyTable(["empID", "empName", "empType"])
                             emp = Employee()
@@ -123,7 +126,7 @@ def main():
                             menu_update_flag = True
                             menu = Menu()
                             new_item = menu.find_by_id(itemID)
-                            while menu_loop_flag:
+                            while menu_update_flag:
                                 print(menu_item_update_table)
                                 menu_update_options = input("Enter option.\n")
                                 match menu_update_options:
@@ -137,7 +140,7 @@ def main():
                                         new_item["itemType"] = input("Item Type:\t")
                                         print(new_item)
                                     case "4":
-                                        menu_loop_flag = False
+                                        menu_update_flag = False
                                         menu.update_item(itemID, new_item)
                                     case "5":
                                         menu_update_flag = False
@@ -155,7 +158,15 @@ def main():
             case "3":
                 print("Bill")
             case "4":
-                print("Table")
+                table_flag = True
+                while table_flag:
+                    print(table_menu)
+                    table_menu_option = input("Choose an option.\n")
+                    match table_menu_option:
+                        case "1":
+                            print("Case 1")
+                        case "2":
+                            table_flag = False
             case "5":
                 print("Order")
             
