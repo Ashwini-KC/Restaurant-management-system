@@ -56,8 +56,10 @@ class Table:
                 cursor.execute(f"update tables set available = 1, custID =\"{customerId}\" where tableID = \"{tableID}\";")
                 conn.commit()
                 conn.close()
+            
+
             self.table_details()
-            return self.tableList
+            return self.table_detail_list
         except Exception as e:
             return e
 

@@ -9,6 +9,3 @@ from .Order import Order
 from .Table import Table
 from .Item import Item
 
-from .Payment import Payment
-from .Payment import Card
-from .Payment import Cash

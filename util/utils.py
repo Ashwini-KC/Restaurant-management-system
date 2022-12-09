@@ -1,3 +1,5 @@
+import string
+from random_id import *
 
 def generate_select_delete(id, table, op):
     """Returns an appropriate SQL query.
@@ -81,3 +83,5 @@ def query_executor_funtion(query):
     Remove redundant code which uses create_db_connection function to run queries in Employee.py,
     Menu.py
     '''
+def create_random_id():
+    return random_id(length=5, character_set=string.digits)

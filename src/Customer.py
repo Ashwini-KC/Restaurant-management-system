@@ -77,7 +77,7 @@ class Customer:
                 cursor.execute(f"delete from customer where custID = \"{self.custId}\"")
                 conn.commit()
                 conn.close()
-
+            
         except Exception as e:
             return e
       
