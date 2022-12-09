@@ -3,5 +3,5 @@ DB_HOST = "localhost"
 
 
 # Will be moved to .env file
-DB_USERNAME = "RogueJonin"
-DB_PASSWORD = "Hokage69"
+DB_USERNAME = "root"
+DB_PASSWORD = "mikami@23"

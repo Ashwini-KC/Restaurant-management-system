@@ -1,7 +1,8 @@
 from random_id import *
+import string
 from util import create_db_connection
 class Bill:
-    billID = random_id(length=8)
+    billID = random_id(length=8,character_set=string.digits)
     billed_item_list = []
     bill_Total = 0
 
@@ -41,16 +42,16 @@ class Bill:
         '''
         
 
-    def generate_Bill(self):
+    def generate_Bill(self,empID):
         try:
             conn = create_db_connection()
-            with conn.cursor as cursor:
-                cursor.execute(f"insert into bill values (\"{self.billID}\",\"{self.CustID}\",{self.bill_Total});")
+            with conn.cursor() as cursor:
+                cursor.execute(f"insert into bill values (\"{self.billID}\",\"{empID}\",\"{self.CustID}\",{self.bill_Total});")
                 conn.commit()
                 conn.close()
             
             
-            return self.billed_item_list
+            return {'billID': self.billID,'EmpID':empID,'CustID':self.CustID,'total':self.bill_Total}
 
         except Exception as e:
             return e

@@ -26,12 +26,12 @@ class Order:
                 
 
 
-    def add_items(self,item,emp,customer,quantity):
+    def add_items(self,item,empID,customer,quantity):
         orderID = random_id(length=7)
         item_details={
             'orderID':orderID,
             'itemID':item,
-            'empID':emp.EmpID,
+            'empID':empID,
             'quantity':quantity,
             'custID':customer.custId,
         }
