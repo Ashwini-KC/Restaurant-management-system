@@ -1,8 +1,7 @@
-from util import create_db_connection
+from util import create_db_connection, generate_insert_update_query
 from random_id import *
 class Table:
-    tableList =[]
-    def __init__(self,EmpId,customerId):
+    def __init__(self,EmpId=None,customerId=None):
         self.EmpID = EmpId
         self.customerId= customerId
 
@@ -45,15 +44,29 @@ class Table:
                     
 
 
-
+    def add_table(self):
+        try:
+            conn = create_db_connection()
+            with conn.cursor() as cursor:
+                cursor.execute(generate_insert_update_query(self.__dict__, "tables", "insert"))
+                conn.commit()
+                conn.close()
+            self.table_details()
+            return self.tableList
+        except Exception as e:
+            return e
         
 
-    def change_availability_status(self,tableID,customerId):
+    def change_availability_status(self, tableID, available, customerId=None):
+        flag = 0
+        if available:
+            flag = 1
+
 
         try:
             conn = create_db_connection()
             with conn.cursor() as cursor:
-                cursor.execute(f"update tables set available = 1, custID =\"{customerId}\" where tableID = \"{tableID}\";")
+                cursor.execute(f"update tables set available = {flag}, custID =\"{customerId}\" where tableID = \"{tableID}\";")
                 conn.commit()
                 conn.close()
             

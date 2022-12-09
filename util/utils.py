@@ -44,7 +44,7 @@ def generate_insert_update_query(obj, table, op, old_id=None):
 
             table: Table name on which the query is to be performed.
 
-            op: The operation performed on the table [select, delete].
+            op: The operation performed on the table [insert, update].
 
             old_id: The value of the primary key of a database entry to which an update operation
                 is performed
@@ -66,6 +66,9 @@ def generate_insert_update_query(obj, table, op, old_id=None):
         case "order":
             table = "ORDER"
             ID = "orderID"
+        case "tables":
+            table = "TABLES"
+            ID = "tableID"
     match op:
         case "insert":
             for key, value in obj.items():
