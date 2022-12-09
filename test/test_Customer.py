@@ -31,3 +31,5 @@ def test_delete_customer():
     cust1 = {"custId":'223LPX1',"custName":'Harry Maguire',"custType":'Takeaway'}
     cust.delete_customer()
     assert  cust1 == cust.customer_details()
+
+    
