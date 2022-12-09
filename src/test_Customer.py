@@ -1,32 +1,12 @@
+from src import Employee, Customer
+import pytest
+
+
+def test_delete_employee():
+    emp = Employee()
+    empID='19'
+    emp1={'EmpID': "19", 'EmpName': "Hue Janas", 'EmpType': "1"}
+    assert emp1== emp.delete_employee(empID)
+
+
     
-def customer_details():
-    '''
-      Test
-    '''
-    pass
-
-
-def ordered_items():
-    '''
-       Test
-    '''
-    pass
-
-def payment_status():
-    '''
-      Test
-    '''
-    pass
-
-def add_customer():
-    '''
-     idk why this is here, but same functionality as add_employee - as per @shibasis
-    '''
-    pass
-    
-def delete_customer():
-    '''
-    test
-        
-    '''
-    pass
