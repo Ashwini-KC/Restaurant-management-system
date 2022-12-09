@@ -54,6 +54,8 @@ source sql/insert-menu.sql
    ```
 
 pip install random_id
+pip install pytest
+pip install pytest-cov
 ### Todo
 
 - [ ] Create tables for each class.
