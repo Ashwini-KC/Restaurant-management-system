@@ -1,34 +1,46 @@
-# Restaurant Management System
+## Restaurant Management System
 
 ## Requirements
 
-1) Python3
-1) pipenv
-1) MySQL server running on port 3306
+Ensure the following dependencies are installed before running the project:
 
-## Initialise project
+1. Python3
+2. pipenv (Python virtual environment manager)
+3. MySQL Server running on port 3306
 
-1) cd into the project directory and install the depedecies.
+## Project Initialization
+
+Follow these steps to set up and run the project:
+
+1. Navigate to the project directory.
+
+    ```bash
+    cd path/to/project-directory
+    ```
+
+2. Install depedecies.
 
     ```bash
     pipenv install
     ```
-
-1) In properties.py file change the configurations.
-
-Run the following commands after opening mysql in command line from the project folder 
-source sql/create_tables.sql
-source sql/insert-menu.sql
-
-1) Implement the code in main.py and run
+3. Configure database settings in the `properties.py` file as per your MySQL setup.
+4. Open MySQL in the command line and execute the following commands to set up the database
 
     ```bash
-    pipenv run rms
+    source sql/create_tables.sql;
+    source sql/insert-menu.sql;
     ```
+5. Run the application:
 
-## Tables in MYSQL
+   ```bash
+   pipenv run rms
+   ```
 
-1) Table name -> employee
+## Database Schema
+
+The system uses the following tables in MySQL:
+
+1. Employee Table
 
     ```
     +---------+--------------+------+-----+---------+-------+
@@ -40,7 +52,7 @@ source sql/insert-menu.sql
     +---------+--------------+------+-----+---------+-------+
     ```
 
-1) Table name -> menu
+2. Menu Table
 
     ```
     +-----------+--------------+------+-----+---------+-------+
@@ -53,9 +65,14 @@ source sql/insert-menu.sql
     +-----------+--------------+------+-----+---------+-------+
    ```
 
+## Installing Additional Packages
+Make sure to install the required packages:
+```bash
 pip install random_id
 pip install pytest
 pip install pytest-cov
+```
+   
 ### Todo
 
 - [ ] Create tables for each class.
